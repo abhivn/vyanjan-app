@@ -1,0 +1,21 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @recipe.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recipe.description %>
+</p>
+<p>
+<% if @recipe.ingredients.any? %>
+<p><strong>Ingredients:</strong>
+<% @recipe.ingredients.each do |ing| %>
+<span class="badge badge-warning"><%= link_to ing.name, ingredient_path(ing)%></span>
+<% end %>
+<% end %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>

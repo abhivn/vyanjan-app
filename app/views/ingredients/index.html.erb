@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ingredients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.name %></td>
+        <td><%= link_to 'Show', ingredient %></td>
+        <td><% if can? :update, ingredient %><%= link_to 'Edit', edit_ingredient_path(ingredient) %><% end %></td>
+        <td><% if can? :destroy, ingredient %><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %><% end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if can? :create, @ingredient%><%= link_to 'New Ingredient', new_ingredient_path %><% end %>
