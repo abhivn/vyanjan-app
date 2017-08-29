@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  has_many :recipes
+  has_many :recipes, dependent: :destroy
   belongs_to :role
   validates :name, presence: true
   validates :role_id, presence: true

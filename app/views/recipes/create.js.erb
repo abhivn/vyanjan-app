@@ -1,0 +1,3 @@
+$('#mynewrecipe').modal('hide');
+$('#container_recipes').prepend('<%= j render @recipe %>');
+$('#recipe_<%= @recipe_id %>').hide().fadeIn(1000);
