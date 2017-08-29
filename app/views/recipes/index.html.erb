@@ -19,7 +19,7 @@
     </div>
 
     <!-- Modal  create action -->
-  <%= form_for(@recipe, remote: true) do |f| %>
+  <%= form_for @recipe, remote: true do |f| %>
   <div class="modal fade" id="mynewrecipe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-dialog">
   <div class="modal-content">
@@ -38,7 +38,11 @@
             <%= f.label :description %><br>
             <%= f.text_area :description, class: "form-control recipe_description" %>
           </div>
-        </div>
+          <div class="field">
+            <div class="form-group">
+              <%= f.file_field :image %>
+            </div>
+          </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal" id="mynewpostclose">Close</button>

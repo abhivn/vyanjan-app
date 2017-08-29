@@ -58,3 +58,4 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
+gem 'remotipart', '~> 1.2'
